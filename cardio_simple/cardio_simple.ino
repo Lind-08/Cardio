@@ -4,6 +4,8 @@
 #include "eeprom_crc.h"
 #include "utils.h"
 
+const char* ID = "4f4d8716-10b1-43ce-aab9-e19b298f4425";
+
 const unsigned long freeEEPROM = 1638348161;
 
 const int L01_PIN = 16;
@@ -19,7 +21,7 @@ int setupMillis = 0;
 
 bool isDisconnectedElectrodes = false;
 
-char* addres = "test";
+char* address = "test";
 int port = 80;
 
 inline void setupPins()
