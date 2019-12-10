@@ -10,7 +10,6 @@ namespace HearthServer.Models
 
         public HearthContext(DbContextOptions<HearthContext> options) : base(options)
         {
-            Database.EnsureDeleted();
             Database.EnsureCreated();
         }
 

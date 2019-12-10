@@ -40,7 +40,7 @@ namespace HearthServer
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseCors(builder => builder.AllowAnyOrigin());
             app.UseRouting();
 
             app.UseAuthorization();

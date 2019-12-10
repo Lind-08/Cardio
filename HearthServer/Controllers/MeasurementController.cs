@@ -17,13 +17,14 @@ namespace HearthServer.Controllers
         }
  
         [HttpGet]
+        [Route("[controller]/GetBySessionId")]
         //Route session/GetBySessionId/?SessionId=1"
         public IActionResult  GetBySessionId(int SessionId)
         {
             var session = db.Sessions.FirstOrDefault(x => x.Id == SessionId);
             if (session == null)
                 return NotFound();
-            var measurements = (from Measurement in db.Measurements where Measurement.Session == session select Measurement).ToList();
+            var measurements = (from Measurement in db.Measurements where Measurement.Session == session select Measurement).Include(s=>s.Session).ToList();
             return new JsonResult(measurements);
         }
  

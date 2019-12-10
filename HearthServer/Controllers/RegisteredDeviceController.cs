@@ -33,9 +33,9 @@ namespace HearthServer.Controllers
             return new ObjectResult(device);
         }
  
-        // POST registereddevice/new
+        // POST registereddevice
         [HttpPost]
-        public IActionResult Post([FromBody]Guid serial)
+        public IActionResult Post(string serial)
         {
             if (serial==null)
             {

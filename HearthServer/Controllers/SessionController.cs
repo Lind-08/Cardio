@@ -19,14 +19,14 @@ namespace HearthServer.Controllers
         // GET session
         public IEnumerable<Session> Get()
         {
-            return db.Sessions.ToList();
+            return db.Sessions.Include(rd => rd.Device).Include(m => m.Measurements).ToList();
         }
  
         // GET session/5
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
-            Session session = db.Sessions.FirstOrDefault(x => x.Id == id);
+            Session session = db.Sessions.Include(rd => rd.Device).Include(m => m.Measurements).FirstOrDefault(x => x.Id == id);
             if (session == null)
                 return NotFound();
             return new ObjectResult(session);
@@ -34,6 +34,8 @@ namespace HearthServer.Controllers
  
         // GET session/GetByDeviceId/?id=2
         [HttpGet]
+        [Route("[controller]/GetByDeviceId")]
+        [ActionName("GetByDeviceId")]
         public IActionResult GetByDeviceId(int id)
         {
             RegisteredDevice device = db.RegisteredDevices.FirstOrDefault(x => x.Id == id);
