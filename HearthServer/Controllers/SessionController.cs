@@ -33,8 +33,8 @@ namespace HearthServer.Controllers
         }
  
         // GET session/GetByDeviceId/?id=2
-        [HttpGet]
-        [Route("[controller]/GetByDeviceId")]
+        [HttpGet("{id}")]
+        [Route("[controller]/GetByDeviceId/{id}")]
         [ActionName("GetByDeviceId")]
         public IActionResult GetByDeviceId(int id)
         {
