@@ -17,8 +17,7 @@ namespace HearthServer.Controllers
         }
  
         [HttpGet]
-        [Route("[controller]/GetBySessionId")]
-        //Route session/GetBySessionId/?SessionId=1"
+        //Route session/?SessionId=1"
         public IActionResult  GetBySessionId(int SessionId)
         {
             var session = db.Sessions.FirstOrDefault(x => x.Id == SessionId);
