@@ -4,6 +4,7 @@ using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using HearthServer.Models;
+using Newtonsoft.Json;
  
 namespace HearthServer.Controllers
 {
@@ -37,7 +38,7 @@ namespace HearthServer.Controllers
         [HttpPost]
         public IActionResult Post(string serial)
         {
-            if (serial==null)
+            if (serial == null)
             {
                 return BadRequest();
             }
