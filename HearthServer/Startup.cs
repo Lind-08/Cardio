@@ -11,6 +11,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 using HearthServer.Models;
+using Newtonsoft.Json;
 
 namespace HearthServer
 {
@@ -26,7 +27,7 @@ namespace HearthServer
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson();
             services.AddEntityFrameworkSqlite();
             services.AddDbContext<HearthContext>(options => 
                 options.UseSqlite(Configuration.GetConnectionString("DefaultConnection"))

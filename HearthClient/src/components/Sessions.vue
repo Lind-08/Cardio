@@ -1,13 +1,13 @@
 <template lang="html">
     <div>
-        <h1>Sessions</h1>
+        <h1>Sessions list</h1>
         <ul>
           <li v-for="session in Sessions">
             <router-link
                 v-bind:key="session.id"
                 active-class="is-active"
                 class="link"
-                :to="{ name: 'measurement', params: { id: session.id } }">
+                :to="{ name: 'Measurements', params: { id: session.id } }">
               {{session.id}}. {{session.dateTime}}
             </router-link>
           </li>
