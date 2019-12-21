@@ -24,7 +24,7 @@ String PASSWORD = "123ntcmrf4";
 String HOST = "http://192.168.5.5:5000/";
 
 int MES_COUNT = 125;
-int CYCLE_LENGTH_MS = 2000;
+int CYCLE_LENGTH_MS = 1000;
 int MAX_LENGTH = 1000;
 
 int setupMillis = 0;
