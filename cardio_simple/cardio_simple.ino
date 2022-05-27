@@ -18,10 +18,10 @@ const int SETUP_PIN = 4;  //D2
 const int MODE_PIN = 14; //D5
 
 //Изменяемые значения
-String SSID = "Lind";
-String PASSWORD = "123ntcmrf4";
+String SSID = "";
+String PASSWORD = "";
 
-String HOST = "http://192.168.5.5:5000/";
+String HOST = "";
 
 int MES_COUNT = 125;
 int CYCLE_LENGTH_MS = 1000;
@@ -140,7 +140,6 @@ void setup() {
     blink(LED_BUILTIN, HIGH);
     blink(LED_BUILTIN, HIGH);
     Serial.print("EEPROM is free. Saving base settings...\t");
-    //TODO: запись значений по умолчанию
     Serial.println("OK");
   }
   else

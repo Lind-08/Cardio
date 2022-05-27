@@ -16,21 +16,10 @@ namespace HearthServer.Controllers
         }
  
         [HttpGet]
-        // GET session
         public IEnumerable<Session> Get()
         {
             return db.Sessions.Include(rd => rd.Device).Include(m => m.Measurements).ToList();
         }
- 
-        // GET session/5
-        /*[HttpGet("{id}")]
-        public IActionResult Get(int id)
-        {
-            Session session = db.Sessions.Include(rd => rd.Device).Include(m => m.Measurements).FirstOrDefault(x => x.Id == id);
-            if (session == null)
-                return NotFound();
-            return new ObjectResult(session);
-        }*/
  
         // GET session/?id=2
         [HttpGet("{id}")]

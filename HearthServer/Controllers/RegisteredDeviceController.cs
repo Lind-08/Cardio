@@ -82,7 +82,6 @@ namespace HearthServer.Controllers
             {
                 return NotFound();
             }
-            //TODO: продумать каскадное удаление сессии при удалении устройства
             db.RegisteredDevices.Remove(device);
             db.SaveChanges();
             return Ok(device);

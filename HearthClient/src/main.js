@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Meta from 'vue-meta'
-import App from './App.vue'
 import Device from './components/Device.vue'
 import Sessions from './components/Sessions.vue'
 import Measurements from './components/Measurements.vue'
